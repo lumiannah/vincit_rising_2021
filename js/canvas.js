@@ -67,7 +67,7 @@ function drawSeparators(data)
             if (sepTextW > dayWidth * 0.5)
                 textX = relativeX
         }
-        canvasContext.fillText(sepText, textX, canvas.height - osY)
+        canvasContext.fillText(sepText, textX, canvas.height-3 - osY)
     }
 
     for (const day in data)
