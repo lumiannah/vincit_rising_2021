@@ -43,7 +43,7 @@ function drawSeparators(data)
         if (separator === 'day')
             sepText = dt.plus({day:1}).weekdayShort
         if (separator === 'week')
-            sepText = 'W' + dt.weekNumber
+            sepText = 'W' + dt.plus({day:1}).weekNumber
         if (separator === 'month')
             sepText = dt.monthShort
         if (separator === 'qvartal') {
@@ -89,7 +89,7 @@ function drawSeparators(data)
         }
 
         // month separators
-        if (dt.getDate() === 1  && days < 190) {
+        if (dt.getDate() === 1  && days < 190  && days > 14) {
             drawSepLine()
             drawSepText(day, 'month')
         }
