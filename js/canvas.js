@@ -160,15 +160,3 @@ function drawLines(data)
     drawValues(minPrice, maxPrice)
 }
 
-window.onresize = reDrawCanvas
-
-function reDrawCanvas()
-{
-    canvas.width = canvas.clientWidth
-    drawSeparators(vm.data)
-    drawLines(vm.data)
-}
-
-
-
-
