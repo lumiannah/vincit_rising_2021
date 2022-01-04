@@ -41,9 +41,9 @@ function drawSeparators(data)
         
         let sepText
         if (separator === 'day')
-            sepText = dt.plus({day:1}).weekdayShort
+            sepText = dt.weekdayShort
         if (separator === 'week')
-            sepText = 'W' + dt.plus({day:1}).weekNumber
+            sepText = 'W' + dt.weekNumber
         if (separator === 'month')
             sepText = dt.monthShort
         if (separator === 'qvartal') {
@@ -95,7 +95,7 @@ function drawSeparators(data)
         }
 
         // week separators
-        if (dt.getDay() === 0 && days < 40) {
+        if (dt.getDay() === 1 && days < 40) {
             drawSepLine()
             drawSepText(day, 'week', 0, canvas.height-sepTextArea)
         }
