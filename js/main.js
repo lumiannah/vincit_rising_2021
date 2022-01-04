@@ -35,7 +35,7 @@ const app = Vue.createApp({
             {
                 if (updated === '') return 
                 
-                const dateFrom = DateTime.fromISO(updated).minus({day:1})
+                const dateFrom = DateTime.fromISO(updated)
                 this.UNIX_dateFrom = Math.floor(dateFrom.toSeconds())
 
                 // jos FROM on suurempi tai sama kuin TO niin muutetaan TO viikkoa eteenpäin 

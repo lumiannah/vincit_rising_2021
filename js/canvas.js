@@ -3,6 +3,7 @@ canvas.height = 220
 canvas.width = canvas.clientWidth
 const canvasContext = canvas.getContext('2d')
 const sepTextArea = 20
+canvasContext.imageSmoothingEnabled = false
 
 function drawValues(min, max)
 {
@@ -14,7 +15,6 @@ function drawValues(min, max)
     const maxWidth = canvasContext.measureText(maxValue).width
     canvasContext.fillText(maxValue, canvas.width-maxWidth-5, sepTextArea*2-5)
     canvasContext.fillText(minValue, canvas.width-minWidth-5, canvas.height-sepTextArea)
-
 }
 
 function drawSeparators(data)
@@ -160,8 +160,14 @@ function drawLines(data)
     drawValues(minPrice, maxPrice)
 }
 
+window.onresize = reDrawCanvas
 
-
+function reDrawCanvas()
+{
+    canvas.width = canvas.clientWidth
+    drawSeparators(vm.data)
+    drawLines(vm.data)
+}
 
 
 
